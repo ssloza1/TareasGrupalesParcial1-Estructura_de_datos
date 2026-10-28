@@ -1,0 +1,40 @@
+COLA EN C++ CON NODOS Y PUNTEROS
+
+1. Extrae el ZIP y abre la carpeta ColaCpp en VS Code:
+   Archivo > Abrir carpeta.
+2. Necesitas g++ instalado y disponible en la terminal.
+   Comprueba: g++ --version
+3. Abre Terminal > Nueva terminal en la carpeta del proyecto.
+4. Compila todos los archivos de implementacion:
+   g++ -std=c++17 -Wall -Wextra -pedantic Nodo.cpp Operaciones.cpp main.cpp -o program.exe
+5. Ejecuta en PowerShell:
+   .\program.exe
+
+ARCHIVOS
+Nodo.h: atributos privados, constructores y declaraciones de getters/setters.
+Nodo.cpp: implementacion de Nodo.
+Operaciones.h: declaraciones de insertar, eliminar, buscar e imprimir.
+Operaciones.cpp: logica de las cuatro operaciones.
+main.cpp: pruebas con los valores 10, 20 y 30.
+
+En esta version no hay plantillas: los .cpp se compilan por separado y no
+se incluyen con #include. Compila desde la terminal con el comando completo;
+el boton que ejecuta solo main.cpp puede generar errores de enlace.
+
+FIFO: insertar al final y eliminar del frente.
+Buscar e imprimir no cambian la cola.
+Nodo*& permite modificar los punteros originales del main.
+-> permite acceder a un metodo mediante un puntero.
+new crea un nodo; delete lo destruye y libera su memoria.
+Al eliminar el ultimo nodo, frente y fin quedan en nullptr.
+
+PYTHON TUTOR
+Para visualizarlo en https://pythontutor.com/cpp.html:
+pega en un solo editor estos contenidos en orden:
+1. Nodo.h (la clase).
+2. Nodo.cpp sin #include "Nodo.h".
+3. Operaciones.cpp sin #include "Operaciones.h".
+4. main.cpp sin #include "Operaciones.h".
+Los #include <iostream> pueden mantenerse.
+Presiona Visualize Execution y avanza con Next.
+Observa frente, fin, actual y los nodos creados con new.
