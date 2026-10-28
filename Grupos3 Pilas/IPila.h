@@ -26,6 +26,9 @@ public:
   //metodo eliminar
   virtual void desapilar() = 0;
 
+  //metodo obtener tamano
+  virtual int sizePila() const = 0;
+
   //metodo buscar
   virtual bool buscar(const std::string& cedula) = 0;
 

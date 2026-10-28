@@ -19,6 +19,7 @@ public:
     void insertar(string n);
     void buscar(string n);
     void eliminar(string n);
+    void invertir();
     void imprimirAdelante();
     void imprimirAtras();
 };

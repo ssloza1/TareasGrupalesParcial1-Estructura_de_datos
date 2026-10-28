@@ -16,6 +16,10 @@ int main() {
     lista.imprimir();
     cout << "Tamanio: " << lista.getTamanio() << endl;
 
+    cout << "\nOBTENIENDO ELEMENTOS POR POSICION" << endl;
+    cout << "Posicion 0: " << lista.obtenerEnPosicion(0) << endl;
+    cout << "Posicion 2: " << lista.obtenerEnPosicion(2) << endl;
+
     cout << "\nBUSCANDO EL 30" << endl;
     Nodo<int>* encontrado = lista.buscar(30);
     if (encontrado != nullptr)

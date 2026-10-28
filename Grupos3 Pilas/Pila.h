@@ -18,6 +18,7 @@ Fecha: 00/10/2026                Erick Sabando, Adrian Toapanta
 class Pila : public IPila {
 private:
   Nodo *tope;
+  int cantidad;
 
 public:
   // constructor
@@ -34,6 +35,8 @@ public:
   void apilar(const Persona &p) override;
   // metodo eliminar
   void desapilar() override;
+  // metodo obtener tamano
+  int sizePila() const override;
   // metodo buscar
   bool buscar(const std::string &cedula) override;
   // metodo imprimir

@@ -27,5 +27,10 @@ int main() {
     miLista.imprimirAdelante();
     miLista.imprimirAtras();
 
+    cout << "\n=== PRUEBA DE INVERSION ===\n";
+    miLista.invertir();
+    miLista.imprimirAdelante();
+    miLista.imprimirAtras();
+
     return 0;
 }

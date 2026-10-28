@@ -22,6 +22,18 @@ bool esOperador(char c) {
            c == '*' || c == '/' || c == '^';
 }
 
+// Cuenta los operadores aritmeticos de una expresion infija
+int contarOperadores(const string& expresion) {
+    int cantidad = 0;
+
+    for (char c : expresion) {
+        if (esOperador(c))
+            cantidad++;
+    }
+
+    return cantidad;
+}
+
 // Convierte una expresion infija a postfija
 string infijaAPostfija(string expresion) {
     stack<char> pila;
@@ -188,7 +200,8 @@ int main() {
         cout << "2. Infija a prefija\n";
         cout << "3. Evaluar expresion numerica\n";
         cout << "4. Mostrar ambas notaciones\n";
-        cout << "5. Salir\n";
+        cout << "5. Contar operadores aritmeticos\n";
+        cout << "6. Salir\n";
         cout << "Seleccione una opcion: ";
 
         if (!(cin >> opcion)) {
@@ -196,9 +209,9 @@ int main() {
             break;
         }
 
-        if (opcion == 5) break;
+        if (opcion == 6) break;
 
-        if (opcion < 1 || opcion > 5) {
+        if (opcion < 1 || opcion > 6) {
             cout << "Opcion no valida.\n";
             continue;
         }
@@ -206,6 +219,12 @@ int main() {
         cout << "Ingrese la expresion infija: ";
         cin >> ws;
         getline(cin, expresion);
+
+        if (opcion == 5) {
+            cout << "Cantidad de operadores: "
+                 << contarOperadores(expresion) << "\n";
+            continue;
+        }
 
         try {
             string postfija = infijaAPostfija(expresion);

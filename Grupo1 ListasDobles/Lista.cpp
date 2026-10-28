@@ -67,6 +67,21 @@ void ListaDoble::eliminar(string n) {
     cout << "-> Se elimino correctamente: " << n << endl;
 }
 
+void ListaDoble::invertir() {
+    Nodo* actual = cabeza;
+
+    while (actual != nullptr) {
+        Nodo* siguiente = actual->getSiguiente();
+        actual->setSiguiente(actual->getAnterior());
+        actual->setAnterior(siguiente);
+        actual = siguiente;
+    }
+
+    Nodo* temporal = cabeza;
+    cabeza = cola;
+    cola = temporal;
+}
+
 void ListaDoble::imprimirAdelante() {
     if (cabeza == nullptr) {
         cout << "La lista esta vacia.\n";

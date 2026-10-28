@@ -41,6 +41,18 @@ bool buscar(const Nodo* frente, int valor) {
     return false;
 }
 
+int contarElementos(const Nodo* frente) {
+    int cantidad = 0;
+    const Nodo* actual = frente;
+
+    while (actual != nullptr) {
+        ++cantidad;
+        actual = actual->getSiguiente();
+    }
+
+    return cantidad;
+}
+
 void imprimir(const Nodo* frente) {
     const Nodo* actual = frente;
     cout << "Cola (frente a fin): ";

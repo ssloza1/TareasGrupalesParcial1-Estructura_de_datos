@@ -13,8 +13,8 @@ COLA EN C++ CON NODOS Y PUNTEROS
 ARCHIVOS
 Nodo.h: atributos privados, constructores y declaraciones de getters/setters.
 Nodo.cpp: implementacion de Nodo.
-Operaciones.h: declaraciones de insertar, eliminar, buscar e imprimir.
-Operaciones.cpp: logica de las cuatro operaciones.
+Operaciones.h: declaraciones de insertar, eliminar, buscar, contarElementos e imprimir.
+Operaciones.cpp: logica de las cinco operaciones.
 main.cpp: pruebas con los valores 10, 20 y 30.
 
 En esta version no hay plantillas: los .cpp se compilan por separado y no
@@ -22,7 +22,7 @@ se incluyen con #include. Compila desde la terminal con el comando completo;
 el boton que ejecuta solo main.cpp puede generar errores de enlace.
 
 FIFO: insertar al final y eliminar del frente.
-Buscar e imprimir no cambian la cola.
+Buscar, contarElementos e imprimir no cambian la cola.
 Nodo*& permite modificar los punteros originales del main.
 -> permite acceder a un metodo mediante un puntero.
 new crea un nodo; delete lo destruye y libera su memoria.

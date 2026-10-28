@@ -14,7 +14,7 @@ Fecha: 00/10/2026                Erick Sabando, Adrian Toapanta
 #include "Persona.h"
 
 //constructor
-Pila::Pila() {}
+Pila::Pila() : tope(nullptr), cantidad(0) {}
 
 //desctructor
 Pila::~Pila(){
@@ -29,6 +29,7 @@ void Pila::apilar(const Persona &p) {
   Nodo *nuevo = new Nodo(p);
   nuevo->setSiguiente(this->tope);
   this->tope = nuevo;
+  ++this->cantidad;
 }
 
 //metodo eliminar
@@ -41,6 +42,12 @@ void Pila::desapilar() {
   this->tope= this->tope->getSiguiente();
   std::cout<<"Desapilado con exito" << std::endl;
   delete temp;
+  --this->cantidad;
+}
+
+//metodo obtener tamano
+int Pila::sizePila() const {
+  return this->cantidad;
 }
 
 //metodo imprimir
